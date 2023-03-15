@@ -1,0 +1,115 @@
+body{
+    font-family: 'Poppins', sans-serif;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+main:after{
+    content: '';
+    min-height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.59) 50%, rgba(0,0,0,1) 100%);
+    z-index: -1;
+}
+
+.carrossel{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+
+.carrossel .imagens{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    display: none;
+    animation: mudarImagem 0.7s;
+}
+
+.carrossel .imagens.ativa{
+    display: block;
+}
+
+@keyframes mudarImagens{
+    from{
+        opacity: 0.85;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.conteudo{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-evenly;
+}
+
+.informacoes .logo{
+    max-width: 350px;
+    filter: invert(1);
+    margin-bottom: 80px;
+}
+
+.conteudo .descricao{
+    width: 49%;
+    color: white;
+    line-height: 30px;
+}
+
+.botoes_carrossel{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.botoes_carrossel .botao{
+    background-color: white;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    border-color: white;
+}
+
+.botoes_carrossel .botao.selecionado{
+    background-color: #104e00;
+}
+
+.menu_lateral{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.menu_lateral ul{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+}
+
+.menu_lateral .icone{
+    width: 30px;
+    filter: invert(1);
+    transition: 0.3s ease-in-out;
+}
+
+.menu_lateral .icone:hover{
+    transform: scale(1.2);
+    display: flex;
+}
+
